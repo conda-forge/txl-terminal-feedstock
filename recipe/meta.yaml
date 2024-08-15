@@ -1,5 +1,5 @@
 {% set name = "txl-terminal" %}
-{% set version = "0.2.13" %}
+{% set version = "0.2.14" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/txl_terminal-{{ version }}.tar.gz
-  sha256: ce1d21d3143e0ee94894f92b49d84d11e336c96cf26462ed554fa36bcce65544
+  sha256: 16b9d2a38a63b7ffa7f8e7c23778fa0c57b58ac63929dcdf455ca97b0123a110
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
@@ -21,7 +21,7 @@ requirements:
     - hatchling
   run:
     - python >=3.10
-    - txl
+    - txl >=0.2.18,<0.3.0
     - pyte >=0.8.1
 
 test:
